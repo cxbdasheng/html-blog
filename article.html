@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>示例文章标题 - 陈大剩博客</title>
+    <meta name="keywords" content="PHP,示例文章,陈大剩博客"/>
+    <meta name="description" content="这是一篇示例文章的描述内容"/>
+    <meta name="author" content="Cxb,chenDasheng"/>
+    <meta name="csrf-token" content="">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/lib/editor/lib/katex/katex.min.css"
+          integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="/lib/editor/lib/katex/katex.min.js"
+            integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja"
+            crossorigin="anonymous"></script>
+                <script src="/lib/layui/jquery.min.js"></script>
+    <script src="/js/pace.min.js"></script>
+
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/prism.css">
+</head>
+<body>
+<!-- 顶部开始 -->
+<div class="top">
+    <div class="top-header">
+        <div class="top-weclome">
+            <div class="today fl">
+                <script type="text/javascript">
+                    var Hours = new Date().getHours();
+                    var meg = '';
+                    if (Hours <= 6) { meg = "凌晨"; }
+                    else if (Hours <= 11) { meg = "早上"; }
+                    else if (Hours <= 14) { meg = "中午"; }
+                    else if (Hours <= 19) { meg = "下午"; }
+                    else { meg = "晚上"; }
+                    document.write('Hi' + meg + '好，现在是：' + new Date().getFullYear() + "年" + (new Date().getMonth() + 1) + "月" + new Date().getDate() + "日" + " " + "星期" + "日一二三四五六".charAt(new Date().getDay()));
+                </script>
+            </div>
+            <div class="loginbar fr">
+                <a id="index-login" href="javascript:;">登录</a>
+            </div>
+        </div>
+    </div>
+    <div class="top_2">
+        <div class="top-nav">
+            <div class="top-nav-left">
+                <a href="index.html"><h1>陈大剩博客</h1></a>
+            </div>
+            <div class="top-nav-right">
+                <ul>
+                    <li><a id="nav" href="index.html">首页</a></li>
+                    <li><a id="nav" href="index.html" class="active">PHP</a></li>
+                    <li><a id="nav" href="index.html">前端</a></li>
+                    <li><a id="nav" href="about.html">关于</a></li>
+                    <li><a id="nav" href="time.html">时间轴</a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <div class="min-nav">
+        <div class="overlay">
+            <i class="iconfont icon-zhedie" id="check-nav"></i>
+        </div>
+        <h1 class="logo"><a href="index.html">陈大剩博客</a></h1>
+    </div>
+    <div class="left-nav">
+        <div class="mnav">
+            <a id="left-nav" href="index.html">首页</a>
+            <li><a id="nav" href="index.html">PHP</a></li>
+            <li><a id="nav" href="index.html">前端</a></li>
+            <li><a id="nav" href="about.html">关于</a></li>
+            <li><a id="nav" href="time.html">时间轴</a></li>
+        </div>
+        <div class="mp"></div>
+    </div>
+</div>
+<!-- 内容开始 -->
+<div class="body">
+    <!-- 文章主体 -->
+    <div class="main-left">
+        <div class="text">
+            <h1 class="article-title">示例文章标题：PHP开发实践分享</h1>
+            <div class="new-info">
+                <ul>
+                    <li><i class="iconfont icon-morentouxiang"></i>陈大剩</li>
+                    <li><i class="iconfont icon-rilicalendar107"></i>2024-01-01 10:00:00</li>
+                    <li><i class="iconfont icon-ai-eye"></i>1024</li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="tags">
+                <ul>
+                    <li><i class="iconfont icon-biaoqian"></i>标签:</li>
+                    <li><a href="index.html" alt="PHP" title="PHP">PHP</a></li>
+                    <li><a href="index.html" alt="Laravel" title="Laravel">Laravel</a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="new-cont">
+                <p>这是文章的正文内容区域。实际内容由后端渲染的 Markdown/HTML 填充。</p>
+                <h2>一、介绍</h2>
+                <p>PHP 是一种广泛使用的开源服务端脚本语言，尤其适合 Web 开发并可嵌入 HTML 中。</p>
+                <h2>二、示例代码</h2>
+                <pre class="line-numbers" style="white-space: pre-wrap;"><code class="language-php">&lt;?php
+echo "Hello, World!";
+$arr = [1, 2, 3];
+foreach ($arr as $v) {
+    echo $v . "\n";
+}
+</code></pre>
+                <h2>三、总结</h2>
+                <p>本文介绍了 PHP 的基本用法，希望对大家有所帮助。</p>
+            </div>
+            <div class="tags">
+                <ul>
+                    <li><i class="iconfont icon-biaoqian"></i>标签:</li>
+                    <li><a href="index.html" alt="PHP" title="PHP">PHP</a></li>
+                    <li><a href="index.html" alt="Laravel" title="Laravel">Laravel</a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="article-action">
+                <div class="xshare">
+                    <span class="xshare-title">分享到：</span>
+                    <div id="js-socials"></div>
+                </div>
+                <div class="zan">
+                    <div class="zan-k" onclick="praise()">
+                        <i class="iconfont icon-weibiaoti--"></i>
+                        赞
+                        <span>（<b class="zan-data">0</b>）</span>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="hflc"></div>
+            <h2 class="hometitle">说点儿什么吧</h2>
+            <div class="ly">
+                <form id="" class="layui-form">
+                    <div class="comments-left">
+                        <img src="/img/default.jpg" alt="头像" title="头像"/>
+                    </div>
+                    <div class="comments-right" style="cursor: pointer;">
+                        <div class="comments-right-head">
+                            <input class="textinput" id="comments-login" name="nickname" required
+                                   type="text" value="" readonly="" placeholder="点击当前框评论" style="cursor: pointer;">
+                            <input class="textinput" name="email" type="text" placeholder="接收回复的邮箱">
+                        </div>
+                        <div class="comments-right-body">
+                            <p>
+                                <textarea class="textarea" required name="content" cols="60"
+                                          required="" rows="12" id="lytext" style="cursor: pointer;"
+                                          placeholder="留下你想对我说的话！"></textarea>
+                            </p>
+                            <div class="comment-ctrl">
+                                <span class="emotion"><img src="/img/em.png" width="20" height="20" alt="">表情</span>
+                            </div>
+                            <button type="button" name="comment-submit" id="submit" class="comment-submit">评论</button>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </form>
+            </div>
+            <div class="comment_foot">
+                <!-- 评论列表示例 -->
+                <div class="hf" id="comment-1">
+                    <div class="hflc">
+                        <div class="hflc-left">
+                            <img src="/img/default.jpg" class="hfimg" alt="访客A" title="访客A">
+                        </div>
+                        <div class="hfmain">
+                            <div class="hfmain-top">
+                                <a href="javascript:;" class="name" title="访客A">访客A</a>
+                                <span class="hfmain-con"><p>这篇文章写得非常好，学到了很多！</p></span>
+                            </div>
+                            <div class="fhtime">
+                                <span class="fhtime-time">2024-01-02 09:30:00</span>
+                                <div class="fh-fh">
+                                    <a href="javascript:;" class="reply" id="1" name="访客A" title="回复">回复</a>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="interactive"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 右侧边栏 -->
+    <div class="main-right">
+        <form action="/search" class="search clear" method="get">
+            <input type="text" class="s-content" id="search" name="wd" value="" placeholder="搜索文章...">
+            <button class="s-btn">搜索</button>
+        </form>
+        <div class="right-fix">
+            <div class="panel pb10">
+                <h2 class="p-titel">标签列表</h2>
+                <div class="p-tal">
+                    <ul>
+                        <li><a href="index.html" alt="PHP" title="PHP">PHP</a></li>
+                        <li><a href="index.html" alt="MySQL" title="MySQL">MySQL</a></li>
+                        <li><a href="index.html" alt="JavaScript" title="JavaScript">JavaScript</a></li>
+                        <li><a href="index.html" alt="Laravel" title="Laravel">Laravel</a></li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            </div>
+            <div class="click">
+                <h2 class="c-titel">置顶推荐</h2>
+                <ul>
+                    <li><a href="article.html" alt="推荐文章一" title="推荐文章一">
+                        <span class="c-img"><img src="img.png" alt="推荐文章一" title="推荐文章一"></span>
+                        <div class="c-right">
+                            <span class="text">推荐文章一</span>
+                            <div class="c-foot">
+                                <span class="muted">2024-01-01</span>
+                                <span class="muted-r"><span class="ds-thread-count">1024 次阅读</span></span>
+                            </div>
+                        </div>
+                    </a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="message">
+                <h2 class="m-titel">留言墙</h2>
+                <div class="w">
+                    <ul>
+                        <li><div title="这篇文章写得很好！">访客A：<a href="article.html">这篇文章写得很好！</a></div></li>
+                    </ul>
+                </div>
+                <div class="clear" style="margin-top: 20px;"></div>
+            </div>
+            <div class="link">
+                <h2 class="l-titel">友情链接</h2>
+                <ul>
+                    <li><a target="_blank" href="https://www.php.net">PHP官网</a></li>
+                    <li><a target="_blank" href="https://laravel.com">Laravel</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>
+<!-- 底部 -->
+<div class="foot">
+    <div class="cont">
+        <div class="cont-main">
+            <p class="fl">
+                <a href="https://github.com/qq851145971/blog">本站由陈大剩博客程序搭建 </a>|
+                <a target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index">粤ICP备XXXXXXXX号</a>|
+                <span class="copyright">Copyright © 2017 -<script>document.write(new Date().getFullYear());</script> Blog</span>|
+                <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">本站采用创作共用版权：CC BY-NC 4.0</a>
+            </p>
+            <p class="fr">
+                <span>站长统计</span>|
+                <span>文章总数[<em>--</em>]</span>|
+                <span>评论总数[<em>--</em>]</span>|
+                <span>登录用户[<em>--</em>]</span>|
+                <span>时间点[<em>--</em>]</span>
+            </p>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <div class="sponsor">
+            本站由 <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="/upyun_logo.png" alt="upyun"></a> 提供cdn加速/云存储服务
+        </div>
+    </div>
+</div>
+<style>
+    .sponsor { padding-left: 20px; padding-right: 20px; text-align: left; font-size: 12px; }
+    .sponsor a { color: #aaa; }
+    .sponsor a img { max-height: 30px; display: inline-block; }
+    .ui.section.divider { margin-bottom: 1px; margin-top: 1px; margin-left: 20px; margin-right: 20px; }
+    .ui.divider:not(.vertical):not(.horizontal) { border-bottom: 1px solid rgba(211, 224, 233, .15); border-top: 1px solid #aaa; }
+</style>
+<div class="return">
+    <div class="returntop">
+        <i class="iconfont icon-dingbu"></i>
+    </div>
+</div>
+<!-- 登录弹窗 -->
+<div class="pop">
+    <div class="pop-left">
+        <img src="/img/login_left.png" alt="logo">
+    </div>
+    <div class="pop-right">
+        <div class="pop-right-head">
+            <h4>登入</h4>
+            <a href="javascript:;" id="login_close"><i class="iconfont icon-zhedie1"></i></a>
+            <div class="clear"></div>
+        </div>
+        <div class="pop-body">
+            <section class="pop-form">
+                <form action="/auth/admin/login" method="post">
+                    <ul>
+                        <li><input type="text" name="email" class="pop-input" placeholder="请输入邮箱账号" /></li>
+                        <li><input type="password" name="password" class="pop-input" placeholder="请输入密码" /></li>
+                    </ul>
+                    <div class="">
+                        <input value="登录" class="form-submit" type="submit">
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>
+<div class="pop-shade"></div>
+<div class="clear"></div>
+<script src="/js/app.js"></script>
+<script type="text/javascript" src="/lib/layui/layui.all.js"></script>
+<script type="text/javascript" src="/js/prism.js"></script>
+<script src="/js/jquery.lazyload.js"></script>
+<script src="/js/jquery.qqFace.js"></script>
+<script>
+    $(function () {
+        var r = '/lib/editor/lib/katex/katex.min',
+            l = { js: [], css: [] },
+            d = {
+                initLaTeX: function () {
+                    var e = this, n = $('.editormd-tex');
+                    0 != n.length && (-1 == $.inArray(r, l.js) ? e.loadScript(r, (function () { e.renderKatex(n) })) : e.renderKatex(n));
+                },
+                renderKatex: function (e) {
+                    'undefined' != typeof katex && e.each((function () {
+                        var e = $(this);
+                        katex.render(e.text(), e[0]);
+                    }));
+                },
+                loadScript: function (t, e, n) {
+                    l.js.push(t);
+                    n = n || 'head';
+                    e = e || function () {};
+                    var i = null;
+                    (i = document.createElement('script')).id = t.replace(/[\./]+/g, '-');
+                    i.type = 'text/javascript';
+                    i.src = t + '.js';
+                    i.onload = function () { e(); };
+                    'head' === n ? document.getElementsByTagName('head')[0].appendChild(i) : document.body.appendChild(i);
+                }
+            };
+        d.initLaTeX();
+
+        $.qqface({
+            imgPath: '/img/gif/',
+            textarea: $('#lytext'),
+            handle: $('.emotion')
+        });
+
+        $('.new-cont a').attr('target', '_blank');
+
+        var _pre = $('.new-cont pre');
+        if (_pre.length > 0) {
+            _pre.addClass("line-numbers").css("white-space", "pre-wrap");
+        } else {
+            _pre.addClass("line-numbers");
+        }
+
+        var form = layui.form;
+
+        function praise() {
+            $.ajax({
+                type: "POST",
+                url: "/praise?number=" + Math.random(),
+                dataType: "json",
+                async: false,
+                data: { id: 1 },
+                success: function (res) {
+                    if (res == "ok") {
+                        var b = Number($('.zan-data').text());
+                        $('.zan-data').text(b + 1);
+                    } else {
+                        alert("你已经投过一次了，还想投么(￣口￣)！！！");
+                    }
+                }
+            });
+        }
+        window.praise = praise;
+
+        form.on('submit(submit)', function (data) {
+            var load = layer.msg('正在努力提交...', { icon: 16, shade: [0.1, '#fff'], time: false });
+            $.ajax({
+                url: "/contact?number=" + Math.random(),
+                type: "POST",
+                dataType: "json",
+                data: data.field,
+                success: function (data) {
+                    layer.close(load);
+                    if (data.success == 1) {
+                        layer.msg(data.message, { icon: 1, time: 1500 });
+                        window.location.reload();
+                    } else {
+                        layer.msg("请求失败！", { icon: 5, time: 1500 });
+                    }
+                },
+                error: function () {
+                    layer.msg("请求失败！", { icon: 5, time: 1500 });
+                }
+            });
+            return false;
+        });
+
+        $('.body').on('click', '.reply', function () {
+            var clas = $(this).attr('class');
+            var id = $(this).attr('id');
+            if (clas !== "check reply") {
+                var html = '<form id="ly" class="layui-form"><div class="comments-left">' +
+                    '<img src="/img/default.jpg" alt="头像" title="头像"/>' +
+                    '</div>' +
+                    '<div class="comments-right">' +
+                    '<div class="comments-right-head">' +
+                    '<input class="textinput" name="nickname" required type="text" value="" readonly="" placeholder="请先登入">' +
+                    '<input class="textinput" name="email" type="text" placeholder="接收回复的邮箱">' +
+                    '</div>' +
+                    '<div class="comments-right-body">' +
+                    '<p><textarea class="textarea" required name="content" cols="60" required="" rows="12" id="lytext_cli" placeholder="留下你想对我说的话！"></textarea></p>' +
+                    '<div class="comment-ctrl"><span class="emotion"><img src="/img/em.png" width="20" height="20" alt="">表情</span></div>' +
+                    '<button type="button" name="comment-submit" id="submit" class="comment-submit">评论</button>' +
+                    '</div></div></form>';
+                $('.comment_foot').find('#ly').remove();
+                $(this).attr('class', 'check reply');
+                $(this).parents('.fh-fh').parents('.fhtime').append(html);
+                $.qqface({
+                    imgPath: '/img/gif/',
+                    textarea: $(this).parents('.fh-fh').parents('.fhtime').find('#ly').find('#lytext_cli'),
+                    handle: $(this).parents('.fh-fh').parents('.fhtime').find('#ly').find('.emotion')
+                });
+            } else {
+                $(this).parents('.fh-fh').parents('.fhtime').find('#ly').remove();
+                $(this).removeClass('check');
+            }
+        });
+    });
+</script>
+</body>
+</html>
