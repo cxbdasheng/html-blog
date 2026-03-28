@@ -1,280 +1,252 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>时间轴 - 陈大剩博客</title>
     <meta name="keywords" content="时间轴,陈大剩博客,成长记录"/>
     <meta name="description" content="陈大剩博客时间轴，记录成长历程"/>
-    <meta name="author" content="Cxb,chenDasheng"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-            <script src="/lib/layui/jquery.min.js"></script>
-    <script src="/js/pace.min.js"></script>
-    
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/time.css">
 </head>
 <body>
-<!-- 顶部开始 -->
-<div class="top">
-    <div class="top-header">
-        <div class="top-weclome">
-            <div class="today fl">
-                <script type="text/javascript">
-                    var Hours = new Date().getHours();
-                    var meg = '';
-                    if (Hours <= 6) { meg = "凌晨"; }
-                    else if (Hours <= 11) { meg = "早上"; }
-                    else if (Hours <= 14) { meg = "中午"; }
-                    else if (Hours <= 19) { meg = "下午"; }
-                    else { meg = "晚上"; }
-                    document.write('Hi' + meg + '好，现在是：' + new Date().getFullYear() + "年" + (new Date().getMonth() + 1) + "月" + new Date().getDate() + "日" + " " + "星期" + "日一二三四五六".charAt(new Date().getDay()));
-                </script>
-            </div>
-            <div class="loginbar fr">
-                <a id="index-login" href="javascript:;">登录</a>
-            </div>
+
+<!-- 顶部提示栏 -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-inner">
+            <span>Hi，欢迎访问陈大剩博客！</span>
+            <a href="#">登录</a>
         </div>
-    </div>
-    <div class="top_2">
-        <div class="top-nav">
-            <div class="top-nav-left">
-                <a href="index.html"><h1>陈大剩博客</h1></a>
-            </div>
-            <div class="top-nav-right">
-                <ul>
-                    <li><a id="nav" href="index.html">首页</a></li>
-                    <li><a id="nav" href="index.html">PHP</a></li>
-                    <li><a id="nav" href="index.html">前端</a></li>
-                    <li><a id="nav" href="about.html">关于</a></li>
-                    <li><a id="nav" href="time.html">时间轴</a></li>
-                </ul>
-                <div class="clear"></div>
-            </div>
-        </div>
-    </div>
-    <div class="min-nav">
-        <div class="overlay">
-            <i class="iconfont icon-zhedie" id="check-nav"></i>
-        </div>
-        <h1 class="logo"><a href="index.html">陈大剩博客</a></h1>
-    </div>
-    <div class="left-nav">
-        <div class="mnav">
-            <a id="left-nav" href="index.html">首页</a>
-            <li><a id="nav" href="index.html">PHP</a></li>
-            <li><a id="nav" href="index.html">前端</a></li>
-            <li><a id="nav" href="about.html">关于</a></li>
-            <li><a id="nav" href="time.html">时间轴</a></li>
-        </div>
-        <div class="mp"></div>
     </div>
 </div>
-<!-- 内容开始 -->
-<div class="body">
-    <div class="main-left">
-        <div class="time-line">
-            <ul class="time-axis">
-                <!-- 时间轴条目示例（奇数行 direction-l，偶数行 direction-r） -->
-                <li>
-                    <div class="direction direction-l">
-                        <div class="flag-wrapper">
-                            <span class="dot"></span>
-                            <span class="time-wrapper">2024-03-15 10:00:00</span>
-                            <p class="flag">博客系统完成新功能开发，支持时间轴页面展示</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="direction direction-r">
-                        <div class="flag-wrapper">
-                            <span class="dot"></span>
-                            <span class="time-wrapper">2024-03-10 14:30:00</span>
-                            <p class="flag">发表文章：<a href="article.html">Laravel队列与任务调度实战</a></p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="direction direction-l">
-                        <div class="flag-wrapper">
-                            <span class="dot"></span>
-                            <span class="time-wrapper">2024-02-28 09:15:00</span>
-                            <p class="flag">发表文章：<a href="article.html">MySQL索引优化与性能调优</a></p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="direction direction-r">
-                        <div class="flag-wrapper">
-                            <span class="dot"></span>
-                            <span class="time-wrapper">2024-02-14 20:00:00</span>
-                            <p class="flag">博客迁移到新服务器，访问速度提升明显</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="direction direction-l">
-                        <div class="flag-wrapper">
-                            <span class="dot"></span>
-                            <span class="time-wrapper">2024-01-20 11:00:00</span>
-                            <p class="flag">发表文章：<a href="article.html">PHP8新特性详解</a></p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="direction direction-r">
-                        <div class="flag-wrapper">
-                            <span class="dot"></span>
-                            <span class="time-wrapper">2024-01-01 00:00:00</span>
-                            <p class="flag">新年快乐！博客正式迎来2024年</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="direction direction-l">
-                        <div class="flag-wrapper">
-                            <span class="dot"></span>
-                            <span class="time-wrapper">2023-12-25 12:00:00</span>
-                            <p class="flag">发表文章：<a href="article.html">Docker容器化部署PHP应用</a></p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="direction direction-r">
-                        <div class="flag-wrapper">
-                            <span class="dot"></span>
-                            <span class="time-wrapper">2023-10-15 15:33:09</span>
-                            <p class="flag">博客正式上线，记录成长之路开始！</p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+
+<!-- 导航 -->
+<header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="index.html" class="site-logo">陈大剩博客</a>
+            <nav class="site-nav">
+                <a href="index.html">首页</a>
+                <a href="index.html">PHP</a>
+                <a href="index.html">前端</a>
+                <a href="about.html">关于</a>
+                <a href="time.html" class="active">时间轴</a>
+            </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </div>
-    <!-- 右侧边栏 -->
-    <div class="main-right">
-        <form action="/search" class="search clear" method="get">
-            <input type="text" class="s-content" id="search" name="wd" value="" placeholder="搜索文章...">
-            <button class="s-btn">搜索</button>
-        </form>
-        <div class="right-fix">
-            <div class="panel pb10">
-                <h2 class="p-titel">标签列表</h2>
-                <div class="p-tal">
-                    <ul>
-                        <li><a href="index.html" alt="PHP" title="PHP">PHP</a></li>
-                        <li><a href="index.html" alt="MySQL" title="MySQL">MySQL</a></li>
-                        <li><a href="index.html" alt="JavaScript" title="JavaScript">JavaScript</a></li>
-                        <li><a href="index.html" alt="Laravel" title="Laravel">Laravel</a></li>
-                        <div class="clear"></div>
-                    </ul>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">首页</a>
+        <a href="index.html">PHP</a>
+        <a href="index.html">前端</a>
+        <a href="about.html">关于</a>
+        <a href="time.html" class="active">时间轴</a>
+    </div>
+</header>
+
+<!-- 主内容 -->
+<div class="main-wrap">
+    <div class="container">
+        <div class="main-grid">
+
+            <!-- 时间轴 -->
+            <div>
+                <div class="articles-section">
+                    <div class="section-header">
+                        <span class="section-title">时间轴</span>
+                    </div>
+                    <div class="time-line">
+                        <ul class="time-axis">
+                            <li>
+                                <div class="direction direction-l">
+                                    <div class="flag-wrapper">
+                                        <span class="dot"></span>
+                                        <span class="time-wrapper">2024-03-15 10:00:00</span>
+                                        <p class="flag">博客系统完成新功能开发，支持时间轴页面展示</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="direction direction-r">
+                                    <div class="flag-wrapper">
+                                        <span class="dot"></span>
+                                        <span class="time-wrapper">2024-03-10 14:30:00</span>
+                                        <p class="flag">发表文章：<a href="article.html">Laravel队列与任务调度实战</a></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="direction direction-l">
+                                    <div class="flag-wrapper">
+                                        <span class="dot"></span>
+                                        <span class="time-wrapper">2024-02-28 09:15:00</span>
+                                        <p class="flag">发表文章：<a href="article.html">MySQL索引优化与性能调优</a></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="direction direction-r">
+                                    <div class="flag-wrapper">
+                                        <span class="dot"></span>
+                                        <span class="time-wrapper">2024-02-14 20:00:00</span>
+                                        <p class="flag">博客迁移到新服务器，访问速度提升明显</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="direction direction-l">
+                                    <div class="flag-wrapper">
+                                        <span class="dot"></span>
+                                        <span class="time-wrapper">2024-01-20 11:00:00</span>
+                                        <p class="flag">发表文章：<a href="article.html">PHP8新特性详解</a></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="direction direction-r">
+                                    <div class="flag-wrapper">
+                                        <span class="dot"></span>
+                                        <span class="time-wrapper">2024-01-01 00:00:00</span>
+                                        <p class="flag">新年快乐！博客正式迎来2024年</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="direction direction-l">
+                                    <div class="flag-wrapper">
+                                        <span class="dot"></span>
+                                        <span class="time-wrapper">2023-12-25 12:00:00</span>
+                                        <p class="flag">发表文章：<a href="article.html">Docker容器化部署PHP应用</a></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="direction direction-r">
+                                    <div class="flag-wrapper">
+                                        <span class="dot"></span>
+                                        <span class="time-wrapper">2023-10-15 15:33:09</span>
+                                        <p class="flag">博客正式上线，记录成长之路开始！</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="click">
-                <h2 class="c-titel">置顶推荐</h2>
-                <ul>
-                    <li><a href="article.html" alt="推荐文章一" title="推荐文章一">
-                        <span class="c-img"><img src="img.png" alt="推荐文章一" title="推荐文章一"></span>
-                        <div class="c-right">
-                            <span class="text">推荐文章一</span>
-                            <div class="c-foot">
-                                <span class="muted">2024-01-01</span>
-                                <span class="muted-r"><span class="ds-thread-count">1024 次阅读</span></span>
+
+            <!-- 右侧边栏 -->
+            <aside class="sidebar">
+
+                <!-- 搜索 -->
+                <div class="sidebar-card">
+                    <form action="/search" class="search-box" method="get">
+                        <input type="text" class="search-input" name="wd" placeholder="搜索文章...">
+                        <button type="submit" class="search-btn">搜索</button>
+                    </form>
+                </div>
+
+                <!-- 标签 -->
+                <div class="sidebar-card">
+                    <div class="sidebar-title">标签列表</div>
+                    <div class="tags-wrap">
+                        <a href="index.html" class="tag">PHP</a>
+                        <a href="index.html" class="tag">MySQL</a>
+                        <a href="index.html" class="tag">JavaScript</a>
+                        <a href="index.html" class="tag">Laravel</a>
+                        <a href="index.html" class="tag">Linux</a>
+                    </div>
+                </div>
+
+                <!-- 置顶推荐 -->
+                <div class="sidebar-card">
+                    <div class="sidebar-title">置顶推荐</div>
+                    <div class="recommend-list">
+                        <div class="recommend-item">
+                            <div class="rec-thumb">
+                                <a href="article.html"><img src="img.png" alt="推荐文章一"></a>
+                            </div>
+                            <div class="rec-info">
+                                <a href="article.html" class="rec-title">推荐文章一的标题内容</a>
+                                <div class="rec-meta">2024-01-01 · 1024 次阅读</div>
                             </div>
                         </div>
-                    </a></li>
-                </ul>
-                <div class="clear"></div>
-            </div>
-            <div class="message">
-                <h2 class="m-titel">留言墙</h2>
-                <div class="w">
-                    <ul>
-                        <li><div title="这篇文章写得很好！">访客A：<a href="article.html">这篇文章写得很好！</a></div></li>
-                    </ul>
-                </div>
-                <div class="clear" style="margin-top: 20px;"></div>
-            </div>
-            <div class="link">
-                <h2 class="l-titel">友情链接</h2>
-                <ul>
-                    <li><a target="_blank" href="https://www.php.net">PHP官网</a></li>
-                    <li><a target="_blank" href="https://laravel.com">Laravel</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-    <div class="clear"></div>
-</div>
-<div class="clear"></div>
-<!-- 底部 -->
-<div class="foot">
-    <div class="cont">
-        <div class="cont-main">
-            <p class="fl">
-                <a href="https://github.com/qq851145971/blog">本站由陈大剩博客程序搭建 </a>|
-                <a target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index">粤ICP备XXXXXXXX号</a>|
-                <span class="copyright">Copyright © 2017 -<script>document.write(new Date().getFullYear());</script> Blog</span>|
-                <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">本站采用创作共用版权：CC BY-NC 4.0</a>
-            </p>
-            <p class="fr">
-                <span>站长统计</span>|
-                <span>文章总数[<em>--</em>]</span>|
-                <span>评论总数[<em>--</em>]</span>|
-                <span>登录用户[<em>--</em>]</span>|
-                <span>时间点[<em>--</em>]</span>
-            </p>
-        </div>
-        <div class="ui inverted section divider"></div>
-        <div class="sponsor">
-            本站由 <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="/upyun_logo.png" alt="upyun"></a> 提供cdn加速/云存储服务
-        </div>
-    </div>
-</div>
-<style>
-    .sponsor { padding-left: 20px; padding-right: 20px; text-align: left; font-size: 12px; }
-    .sponsor a { color: #aaa; }
-    .sponsor a img { max-height: 30px; display: inline-block; }
-    .ui.section.divider { margin-bottom: 1px; margin-top: 1px; margin-left: 20px; margin-right: 20px; }
-    .ui.divider:not(.vertical):not(.horizontal) { border-bottom: 1px solid rgba(211, 224, 233, .15); border-top: 1px solid #aaa; }
-</style>
-<div class="return">
-    <div class="returntop">
-        <i class="iconfont icon-dingbu"></i>
-    </div>
-</div>
-<!-- 登录弹窗 -->
-<div class="pop">
-    <div class="pop-left">
-        <img src="/img/login_left.png" alt="logo">
-    </div>
-    <div class="pop-right">
-        <div class="pop-right-head">
-            <h4>登入</h4>
-            <a href="javascript:;" id="login_close"><i class="iconfont icon-zhedie1"></i></a>
-            <div class="clear"></div>
-        </div>
-        <div class="pop-body">
-            <section class="pop-form">
-                <form action="/auth/admin/login" method="post">
-                    <ul>
-                        <li><input type="text" name="email" class="pop-input" placeholder="请输入邮箱账号" /></li>
-                        <li><input type="password" name="password" class="pop-input" placeholder="请输入密码" /></li>
-                    </ul>
-                    <div class="">
-                        <input value="登录" class="form-submit" type="submit">
+                        <div class="recommend-item">
+                            <div class="rec-thumb">
+                                <a href="article.html"><img src="img.png" alt="推荐文章二"></a>
+                            </div>
+                            <div class="rec-info">
+                                <a href="article.html" class="rec-title">推荐文章二的标题内容</a>
+                                <div class="rec-meta">2024-01-02 · 856 次阅读</div>
+                            </div>
+                        </div>
                     </div>
-                </form>
-            </section>
+                </div>
+
+                <!-- 留言墙 -->
+                <div class="sidebar-card">
+                    <div class="sidebar-title">留言墙</div>
+                    <div class="msg-list">
+                        <div class="msg-item">
+                            <span class="msg-author">访客A：</span>
+                            <span class="msg-text">这篇文章写得很好！</span>
+                        </div>
+                        <div class="msg-item">
+                            <span class="msg-author">访客B：</span>
+                            <span class="msg-text">学到了很多，感谢分享</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 友情链接 -->
+                <div class="sidebar-card">
+                    <div class="sidebar-title">友情链接</div>
+                    <div class="links-list">
+                        <a href="https://www.php.net" target="_blank">PHP 官网</a>
+                        <a href="https://laravel.com" target="_blank">Laravel</a>
+                    </div>
+                </div>
+
+            </aside>
         </div>
     </div>
 </div>
-<div class="pop-shade"></div>
-<div class="clear"></div>
-<script src="/js/app.js"></script>
-<script src="/js/jquery.lazyload.js"></script>
+
+<!-- 页脚 -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="https://github.com/qq851145971/blog">本站由陈大剩博客程序搭建</a>
+                <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">粤ICP备XXXXXXXX号</a>
+                <span>Copyright © 2017 - 2026 Blog</span>
+                <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">CC BY-NC 4.0</a>
+            </div>
+            <div class="footer-stats">
+                <span>文章总数[<em>--</em>]</span>
+                <span>评论总数[<em>--</em>]</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- 回到顶部 -->
+<div class="back-top">
+    <i class="iconfont icon-dingbu"></i>
+</div>
+
+<script>
+    document.getElementById('navToggle').addEventListener('click', function() {
+        this.classList.toggle('open');
+        document.getElementById('mobileNav').classList.toggle('open');
+    });
+    document.querySelector('.back-top').addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+
 </body>
 </html>
