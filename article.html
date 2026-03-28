@@ -1,298 +1,488 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>示例文章标题 - 陈大剩博客</title>
     <meta name="keywords" content="PHP,示例文章,陈大剩博客"/>
     <meta name="description" content="这是一篇示例文章的描述内容"/>
     <meta name="author" content="Cxb,chenDasheng"/>
-    <meta name="csrf-token" content="">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/article.css">
 </head>
 <body>
-<!-- 顶部开始 -->
-<div class="top">
-    <div class="top-header">
-        <div class="top-weclome">
-            <div class="today fl">
-                Hi，欢迎访问陈大剩博客！
-            </div>
-            <div class="loginbar fr">
-                <a id="index-login" href="#">登录</a>
-            </div>
+
+<!-- 顶部提示栏 -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-inner">
+            <span>Hi，欢迎访问陈大剩博客！</span>
+            <a href="#">登录</a>
         </div>
-    </div>
-    <div class="top_2">
-        <div class="top-nav">
-            <div class="top-nav-left">
-                <a href="index.html"><h1>陈大剩博客</h1></a>
-            </div>
-            <div class="top-nav-right">
-                <ul>
-                    <li><a id="nav" href="index.html">首页</a></li>
-                    <li><a id="nav" href="index.html" class="active">PHP</a></li>
-                    <li><a id="nav" href="index.html">前端</a></li>
-                    <li><a id="nav" href="about.html">关于</a></li>
-                    <li><a id="nav" href="time.html">时间轴</a></li>
-                </ul>
-                <div class="clear"></div>
-            </div>
-        </div>
-    </div>
-    <div class="min-nav">
-        <div class="overlay">
-            <i class="iconfont icon-zhedie" id="check-nav"></i>
-        </div>
-        <h1 class="logo"><a href="index.html">陈大剩博客</a></h1>
-    </div>
-    <div class="left-nav">
-        <div class="mnav">
-            <a id="left-nav" href="index.html">首页</a>
-            <li><a id="nav" href="index.html">PHP</a></li>
-            <li><a id="nav" href="index.html">前端</a></li>
-            <li><a id="nav" href="about.html">关于</a></li>
-            <li><a id="nav" href="time.html">时间轴</a></li>
-        </div>
-        <div class="mp"></div>
     </div>
 </div>
-<!-- 内容开始 -->
-<div class="body">
-    <!-- 文章主体 -->
-    <div class="main-left">
-        <div class="text">
-            <h1 class="article-title">示例文章标题：PHP开发实践分享</h1>
-            <div class="new-info">
-                <ul>
-                    <li><i class="iconfont icon-morentouxiang"></i>陈大剩</li>
-                    <li><i class="iconfont icon-rilicalendar107"></i>2024-01-01 10:00:00</li>
-                    <li><i class="iconfont icon-ai-eye"></i>1024</li>
-                </ul>
-                <div class="clear"></div>
-            </div>
-            <div class="tags">
-                <ul>
-                    <li><i class="iconfont icon-biaoqian"></i>标签:</li>
-                    <li><a href="index.html" alt="PHP" title="PHP">PHP</a></li>
-                    <li><a href="index.html" alt="Laravel" title="Laravel">Laravel</a></li>
-                </ul>
-                <div class="clear"></div>
-            </div>
-            <div class="new-cont">
-                <p>这是文章的正文内容区域。实际内容由后端渲染的 Markdown/HTML 填充。</p>
-                <h2>一、介绍</h2>
-                <p>PHP 是一种广泛使用的开源服务端脚本语言，尤其适合 Web 开发并可嵌入 HTML 中。</p>
-                <h2>二、示例代码</h2>
-                <pre class="line-numbers" style="white-space: pre-wrap;"><code class="language-php">&lt;?php
+
+<!-- 导航 -->
+<header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="index.html" class="site-logo">陈大剩博客</a>
+            <nav class="site-nav">
+                <a href="index.html">首页</a>
+                <a href="index.html" class="active">PHP</a>
+                <a href="index.html">前端</a>
+                <a href="about.html">关于</a>
+                <a href="time.html">时间轴</a>
+            </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">首页</a>
+        <a href="index.html" class="active">PHP</a>
+        <a href="index.html">前端</a>
+        <a href="about.html">关于</a>
+        <a href="time.html">时间轴</a>
+    </div>
+</header>
+
+<!-- 主内容 -->
+<div class="main-wrap">
+    <div class="container">
+        <div class="main-grid">
+
+            <!-- 文章主体 -->
+            <div>
+                <div class="article-detail">
+                    <h1 class="article-detail-title">示例文章标题：PHP开发实践分享</h1>
+                    <div class="article-detail-meta">
+                        <span>陈大剩</span>
+                        <span>2024-01-01 10:00:00</span>
+                        <span>1024 次阅读</span>
+                    </div>
+                    <div class="article-detail-tags">
+                        <span class="cat">PHP</span>
+                        <span class="cat">Laravel</span>
+                    </div>
+                    <div class="article-detail-body">
+                        <p>这是文章的正文内容区域。实际内容由后端渲染的 Markdown/HTML 填充。</p>
+                        <h2>一、介绍</h2>
+                        <p>PHP 是一种广泛使用的开源服务端脚本语言，尤其适合 Web 开发并可嵌入 HTML 中。</p>
+                        <h2>二、示例代码</h2>
+                        <pre><code class="language-php">&lt;?php
 echo "Hello, World!";
 $arr = [1, 2, 3];
 foreach ($arr as $v) {
     echo $v . "\n";
 }
 </code></pre>
-                <h2>三、总结</h2>
-                <p>本文介绍了 PHP 的基本用法，希望对大家有所帮助。</p>
-            </div>
-            <div class="tags">
-                <ul>
-                    <li><i class="iconfont icon-biaoqian"></i>标签:</li>
-                    <li><a href="index.html" alt="PHP" title="PHP">PHP</a></li>
-                    <li><a href="index.html" alt="Laravel" title="Laravel">Laravel</a></li>
-                </ul>
-                <div class="clear"></div>
-            </div>
-            <div class="article-action">
-                <div class="xshare">
-                    <span class="xshare-title">分享到：</span>
-                    <div id="js-socials"></div>
-                </div>
-                <div class="zan">
-                    <div class="zan-k" onclick="praise()">
-                        <i class="iconfont icon-weibiaoti--"></i>
-                        赞
-                        <span>（<b class="zan-data">0</b>）</span>
+                        <h2>三、总结</h2>
+                        <p>本文介绍了 PHP 的基本用法，希望对大家有所帮助。</p>
                     </div>
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div class="hflc"></div>
-            <h2 class="hometitle">说点儿什么吧</h2>
-            <div class="ly">
-                <form id="" class="layui-form">
-                    <div class="comments-left">
-                        <img src="/img/default.jpg" alt="头像" title="头像"/>
+                    <div class="article-detail-tags">
+                        <span class="cat">PHP</span>
+                        <span class="cat">Laravel</span>
                     </div>
-                    <div class="comments-right" style="cursor: pointer;">
-                        <div class="comments-right-head">
-                            <input class="textinput" id="comments-login" name="nickname" required
-                                   type="text" value="" readonly="" placeholder="点击当前框评论" style="cursor: pointer;">
-                            <input class="textinput" name="email" type="text" placeholder="接收回复的邮箱">
-                        </div>
-                        <div class="comments-right-body">
-                            <p>
-                                <textarea class="textarea" required name="content" cols="60"
-                                          required="" rows="12" id="lytext" style="cursor: pointer;"
-                                          placeholder="留下你想对我说的话！"></textarea>
-                            </p>
-                            <div class="comment-ctrl">
-                                <span class="emotion"><img src="/img/em.png" width="20" height="20" alt="">表情</span>
-                            </div>
-                            <button type="button" name="comment-submit" id="submit" class="comment-submit">评论</button>
-                        </div>
+
+                    <!-- 点赞 -->
+                    <div class="article-actions">
+                        <button class="zan-btn" onclick="praise()">
+                            赞 <span class="zan-count">0</span>
+                        </button>
                     </div>
-                    <div class="clear"></div>
-                </form>
-            </div>
-            <div class="comment_foot">
-                <!-- 评论列表示例 -->
-                <div class="hf" id="comment-1">
-                    <div class="hflc">
-                        <div class="hflc-left">
-                            <img src="/img/default.jpg" class="hfimg" alt="访客A" title="访客A">
+
+                    <!-- 评论 -->
+                    <div class="comment-section">
+                        <div class="comment-section-header">
+                            <h2 class="comment-section-title">说点儿什么吧</h2>
+                            <span class="comment-count">6 条评论</span>
                         </div>
-                        <div class="hfmain">
-                            <div class="hfmain-top">
-                                <a href="#" class="name" title="访客A">访客A</a>
-                                <span class="hfmain-con"><p>这篇文章写得非常好，学到了很多！</p></span>
-                            </div>
-                            <div class="fhtime">
-                                <span class="fhtime-time">2024-01-02 09:30:00</span>
-                                <div class="fh-fh">
-                                    <a href="#" class="reply" id="1" name="访客A" title="回复">回复</a>
+                        <form class="comment-form">
+                            <div class="comment-form-inputs">
+                                <div class="comment-avatar-placeholder">
+                                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="20" fill="#e2e8f0"/><circle cx="20" cy="16" r="7" fill="#a0aec0"/><ellipse cx="20" cy="34" rx="12" ry="8" fill="#a0aec0"/></svg>
                                 </div>
-                                <div class="clear"></div>
+                                <div class="comment-form-fields">
+                                    <div class="comment-form-row">
+                                        <input class="comment-input" name="nickname" type="text" placeholder="昵称（必填）" aria-label="昵称">
+                                        <input class="comment-input" name="email" type="email" placeholder="邮箱（用于接收回复）" aria-label="邮箱">
+                                    </div>
+                                    <textarea class="comment-textarea" name="content" rows="4" placeholder="留下你想对我说的话，支持 Markdown ✨" aria-label="评论内容"></textarea>
+                                    <div class="comment-form-footer">
+                                        <span class="comment-tip">Ctrl+Enter 快速提交</span>
+                                        <button type="button" class="comment-submit">发表评论</button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="interactive"></div>
+                        </form>
+
+                        <!-- 评论列表 -->
+                        <div class="comment-list">
+
+                            <div class="comment-item">
+                                <div class="comment-avatar" style="background:#6c63ff;">张</div>
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <span class="comment-author">张小明</span>
+                                        <span class="comment-time">2024-01-02 09:30</span>
+                                    </div>
+                                    <div class="comment-body">这篇文章写得非常好！foreach 遍历的例子让我一下子明白了 PHP 数组的用法，希望后续能出更多实战系列。</div>
+                                    <div class="comment-actions">
+                                        <button class="comment-like-btn"><span>👍</span> 12</button>
+                                        <a href="#" class="reply-btn">回复</a>
+                                    </div>
+                                    <!-- 嵌套回复 -->
+                                    <div class="comment-replies">
+                                        <div class="comment-item reply-item">
+                                            <div class="comment-avatar" style="background:#e74c3c;">陈</div>
+                                            <div class="comment-content">
+                                                <div class="comment-header">
+                                                    <span class="comment-author">陈大剩 <span class="author-badge">博主</span></span>
+                                                    <span class="comment-time">2024-01-02 11:05</span>
+                                                </div>
+                                                <div class="comment-body">谢谢你的支持！后续会陆续出 Laravel 实战和 MySQL 优化的系列文章，敬请期待～</div>
+                                                <div class="comment-actions">
+                                                    <button class="comment-like-btn"><span>👍</span> 5</button>
+                                                    <a href="#" class="reply-btn">回复</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="comment-item reply-item">
+                                            <div class="comment-avatar" style="background:#6c63ff;">张</div>
+                                            <div class="comment-content">
+                                                <div class="comment-header">
+                                                    <span class="comment-author">张小明</span>
+                                                    <span class="reply-at">回复 @陈大剩</span>
+                                                    <span class="comment-time">2024-01-02 13:20</span>
+                                                </div>
+                                                <div class="comment-body">太棒了！Laravel 实战是我最期待的，之前一直搞不懂 Eloquent 关联关系，希望能重点讲一讲。</div>
+                                                <div class="comment-actions">
+                                                    <button class="comment-like-btn"><span>👍</span> 3</button>
+                                                    <a href="#" class="reply-btn">回复</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="comment-item reply-item">
+                                            <div class="comment-avatar" style="background:#e74c3c;">陈</div>
+                                            <div class="comment-content">
+                                                <div class="comment-header">
+                                                    <span class="comment-author">陈大剩 <span class="author-badge">博主</span></span>
+                                                    <span class="reply-at">回复 @张小明</span>
+                                                    <span class="comment-time">2024-01-02 15:47</span>
+                                                </div>
+                                                <div class="comment-body">记下来了！Eloquent 关联关系（hasOne / hasMany / belongsToMany）会专门出一篇，预计下周发布～</div>
+                                                <div class="comment-actions">
+                                                    <button class="comment-like-btn"><span>👍</span> 8</button>
+                                                    <a href="#" class="reply-btn">回复</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="comment-item reply-item">
+                                            <div class="comment-avatar" style="background:#805ad5;">孙</div>
+                                            <div class="comment-content">
+                                                <div class="comment-header">
+                                                    <span class="comment-author">孙晨曦</span>
+                                                    <span class="reply-at">回复 @陈大剩</span>
+                                                    <span class="comment-time">2024-01-02 16:30</span>
+                                                </div>
+                                                <div class="comment-body">+1，我也在等 Eloquent 那篇！顺便求一篇 Composer 的，感谢博主！</div>
+                                                <div class="comment-actions">
+                                                    <button class="comment-like-btn"><span>👍</span> 2</button>
+                                                    <a href="#" class="reply-btn">回复</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comment-item">
+                                <div class="comment-avatar" style="background:#38a169;">李</div>
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <span class="comment-author">李四</span>
+                                        <span class="comment-time">2024-01-03 14:22</span>
+                                    </div>
+                                    <div class="comment-body">代码示例很清晰，我在本地跑了一下，完全没问题。建议可以加上异常处理的章节，比如 try-catch 在 PHP 里的最佳实践。</div>
+                                    <div class="comment-actions">
+                                        <button class="comment-like-btn"><span>👍</span> 8</button>
+                                        <a href="#" class="reply-btn">回复</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comment-item">
+                                <div class="comment-avatar" style="background:#d69e2e;">王</div>
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <span class="comment-author">王小花</span>
+                                        <span class="comment-time">2024-01-04 08:50</span>
+                                    </div>
+                                    <div class="comment-body">写博客不容易，坚持更新很重要！我也是个 PHP 初学者，跟着你的文章学了很多，已经收藏了这个博客。</div>
+                                    <div class="comment-actions">
+                                        <button class="comment-like-btn"><span>👍</span> 6</button>
+                                        <a href="#" class="reply-btn">回复</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comment-item">
+                                <div class="comment-avatar" style="background:#3182ce;">赵</div>
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <span class="comment-author">赵大宝</span>
+                                        <span class="comment-time">2024-01-05 20:17</span>
+                                    </div>
+                                    <div class="comment-body">请问文章中的 <code>foreach ($arr as $v)</code> 和 <code>foreach ($arr as $k => $v)</code> 在性能上有区别吗？如果数组很大的话哪种更推荐？</div>
+                                    <div class="comment-actions">
+                                        <button class="comment-like-btn"><span>👍</span> 3</button>
+                                        <a href="#" class="reply-btn">回复</a>
+                                    </div>
+                                    <div class="comment-replies">
+                                        <div class="comment-item reply-item">
+                                            <div class="comment-avatar" style="background:#e74c3c;">陈</div>
+                                            <div class="comment-content">
+                                                <div class="comment-header">
+                                                    <span class="comment-author">陈大剩 <span class="author-badge">博主</span></span>
+                                                    <span class="comment-time">2024-01-05 22:40</span>
+                                                </div>
+                                                <div class="comment-body">性能上基本没有差别，PHP 底层的处理几乎一样。如果不需要 key，用第一种更简洁；如果需要关联 key 就用第二种。大数组建议结合引用 <code>&$v</code> 来避免复制开销。</div>
+                                                <div class="comment-actions">
+                                                    <button class="comment-like-btn"><span>👍</span> 7</button>
+                                                    <a href="#" class="reply-btn">回复</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="comment-item reply-item">
+                                            <div class="comment-avatar" style="background:#3182ce;">赵</div>
+                                            <div class="comment-content">
+                                                <div class="comment-header">
+                                                    <span class="comment-author">赵大宝</span>
+                                                    <span class="reply-at">回复 @陈大剩</span>
+                                                    <span class="comment-time">2024-01-06 09:15</span>
+                                                </div>
+                                                <div class="comment-body">明白了！用引用 <code>&$v</code> 的话，修改 <code>$v</code> 会影响原数组对吗？循环结束后要 <code>unset($v)</code> 吗？</div>
+                                                <div class="comment-actions">
+                                                    <button class="comment-like-btn"><span>👍</span> 4</button>
+                                                    <a href="#" class="reply-btn">回复</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="comment-item reply-item">
+                                            <div class="comment-avatar" style="background:#e74c3c;">陈</div>
+                                            <div class="comment-content">
+                                                <div class="comment-header">
+                                                    <span class="comment-author">陈大剩 <span class="author-badge">博主</span></span>
+                                                    <span class="reply-at">回复 @赵大宝</span>
+                                                    <span class="comment-time">2024-01-06 10:02</span>
+                                                </div>
+                                                <div class="comment-body">对的！引用会修改原数组。循环结束后 <strong>必须</strong> <code>unset($v)</code>，否则 <code>$v</code> 还指向数组最后一个元素，后续代码如果再赋值会踩坑。这是 PHP 一个经典的坑，下篇文章我会专门提到。</div>
+                                                <div class="comment-actions">
+                                                    <button class="comment-like-btn"><span>👍</span> 11</button>
+                                                    <a href="#" class="reply-btn">回复</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="comment-item reply-item">
+                                            <div class="comment-avatar" style="background:#38a169;">李</div>
+                                            <div class="comment-content">
+                                                <div class="comment-header">
+                                                    <span class="comment-author">李四</span>
+                                                    <span class="reply-at">回复 @陈大剩</span>
+                                                    <span class="comment-time">2024-01-06 11:30</span>
+                                                </div>
+                                                <div class="comment-body">这个坑我踩过！调试了半天才发现是引用没释放。博主的解释很到位，期待下篇！</div>
+                                                <div class="comment-actions">
+                                                    <button class="comment-like-btn"><span>👍</span> 6</button>
+                                                    <a href="#" class="reply-btn">回复</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comment-item">
+                                <div class="comment-avatar" style="background:#805ad5;">孙</div>
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <span class="comment-author">孙晨曦</span>
+                                        <span class="comment-time">2024-01-07 16:03</span>
+                                    </div>
+                                    <div class="comment-body">学到了！顺便问一下博主有没有关于 Composer 包管理的文章？在项目里用 Laravel 总感觉依赖关系弄不清楚。</div>
+                                    <div class="comment-actions">
+                                        <button class="comment-like-btn"><span>👍</span> 4</button>
+                                        <a href="#" class="reply-btn">回复</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comment-item">
+                                <div class="comment-avatar" style="background:#319795;">吴</div>
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <span class="comment-author">吴天明</span>
+                                        <span class="comment-time">2024-01-09 10:44</span>
+                                    </div>
+                                    <div class="comment-body">文章排版很舒服，代码高亮也很清晰，阅读体验一流。继续加油，期待更多干货！</div>
+                                    <div class="comment-actions">
+                                        <button class="comment-like-btn"><span>👍</span> 9</button>
+                                        <a href="#" class="reply-btn">回复</a>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="clear"></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- 右侧边栏 -->
-    <div class="main-right">
-        <form action="/search" class="search clear" method="get">
-            <input type="text" class="s-content" id="search" name="wd" value="" placeholder="搜索文章...">
-            <button class="s-btn">搜索</button>
-        </form>
-        <div class="right-fix">
-            <div class="panel pb10">
-                <h2 class="p-titel">标签列表</h2>
-                <div class="p-tal">
-                    <ul>
-                        <li><a href="index.html" alt="PHP" title="PHP">PHP</a></li>
-                        <li><a href="index.html" alt="MySQL" title="MySQL">MySQL</a></li>
-                        <li><a href="index.html" alt="JavaScript" title="JavaScript">JavaScript</a></li>
-                        <li><a href="index.html" alt="Laravel" title="Laravel">Laravel</a></li>
-                        <div class="clear"></div>
-                    </ul>
+
+            <!-- 右侧边栏 -->
+            <aside class="sidebar">
+
+                <!-- 搜索 -->
+                <div class="sidebar-card">
+                    <form action="/search" class="search-box" method="get">
+                        <input type="text" class="search-input" name="wd" placeholder="搜索文章...">
+                        <button type="submit" class="search-btn">搜索</button>
+                    </form>
                 </div>
-            </div>
-            <div class="click">
-                <h2 class="c-titel">置顶推荐</h2>
-                <ul>
-                    <li><a href="article.html" alt="推荐文章一" title="推荐文章一">
-                        <span class="c-img"><img src="img.png" alt="推荐文章一" title="推荐文章一"></span>
-                        <div class="c-right">
-                            <span class="text">推荐文章一</span>
-                            <div class="c-foot">
-                                <span class="muted">2024-01-01</span>
-                                <span class="muted-r"><span class="ds-thread-count">1024 次阅读</span></span>
+
+                <!-- 标签 -->
+                <div class="sidebar-card">
+                    <div class="sidebar-title">标签列表</div>
+                    <div class="tags-wrap">
+                        <a href="index.html" class="tag">PHP</a>
+                        <a href="index.html" class="tag">MySQL</a>
+                        <a href="index.html" class="tag">JavaScript</a>
+                        <a href="index.html" class="tag">Laravel</a>
+                        <a href="index.html" class="tag">Linux</a>
+                    </div>
+                </div>
+
+                <!-- 置顶推荐 -->
+                <div class="sidebar-card">
+                    <div class="sidebar-title">置顶推荐</div>
+                    <div class="recommend-list">
+                        <div class="recommend-item">
+                            <div class="rec-thumb">
+                                <a href="article.html"><img src="img.png" alt="推荐文章一"></a>
+                            </div>
+                            <div class="rec-info">
+                                <a href="article.html" class="rec-title">推荐文章一的标题内容</a>
+                                <div class="rec-meta">2024-01-01 · 1024 次阅读</div>
                             </div>
                         </div>
-                    </a></li>
-                </ul>
-                <div class="clear"></div>
-            </div>
-            <div class="message">
-                <h2 class="m-titel">留言墙</h2>
-                <div class="w">
-                    <ul>
-                        <li><div title="这篇文章写得很好！">访客A：<a href="article.html">这篇文章写得很好！</a></div></li>
-                    </ul>
-                </div>
-                <div class="clear" style="margin-top: 20px;"></div>
-            </div>
-            <div class="link">
-                <h2 class="l-titel">友情链接</h2>
-                <ul>
-                    <li><a target="_blank" href="https://www.php.net">PHP官网</a></li>
-                    <li><a target="_blank" href="https://laravel.com">Laravel</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-    <div class="clear"></div>
-</div>
-<div class="clear"></div>
-<!-- 底部 -->
-<div class="foot">
-    <div class="cont">
-        <div class="cont-main">
-            <p class="fl">
-                <a href="https://github.com/qq851145971/blog">本站由陈大剩博客程序搭建 </a>|
-                <a target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index">粤ICP备XXXXXXXX号</a>|
-                <span class="copyright">Copyright © 2017 - 2026 Blog</span>|
-                <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">本站采用创作共用版权：CC BY-NC 4.0</a>
-            </p>
-            <p class="fr">
-                <span>站长统计</span>|
-                <span>文章总数[<em>--</em>]</span>|
-                <span>评论总数[<em>--</em>]</span>|
-                <span>登录用户[<em>--</em>]</span>|
-                <span>时间点[<em>--</em>]</span>
-            </p>
-        </div>
-        <div class="ui inverted section divider"></div>
-        <div class="sponsor">
-            本站由 <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="/upyun_logo.png" alt="upyun"></a> 提供cdn加速/云存储服务
-        </div>
-    </div>
-</div>
-<style>
-    .sponsor { padding-left: 20px; padding-right: 20px; text-align: left; font-size: 12px; }
-    .sponsor a { color: #aaa; }
-    .sponsor a img { max-height: 30px; display: inline-block; }
-    .ui.section.divider { margin-bottom: 1px; margin-top: 1px; margin-left: 20px; margin-right: 20px; }
-    .ui.divider:not(.vertical):not(.horizontal) { border-bottom: 1px solid rgba(211, 224, 233, .15); border-top: 1px solid #aaa; }
-</style>
-<div class="return">
-    <div class="returntop">
-        <i class="iconfont icon-dingbu"></i>
-    </div>
-</div>
-<!-- 登录弹窗 -->
-<div class="pop">
-    <div class="pop-left">
-        <img src="/img/login_left.png" alt="logo">
-    </div>
-    <div class="pop-right">
-        <div class="pop-right-head">
-            <h4>登入</h4>
-            <a href="#" id="login_close"><i class="iconfont icon-zhedie1"></i></a>
-            <div class="clear"></div>
-        </div>
-        <div class="pop-body">
-            <section class="pop-form">
-                <form action="/auth/admin/login" method="post">
-                    <ul>
-                        <li><input type="text" name="email" class="pop-input" placeholder="请输入邮箱账号" /></li>
-                        <li><input type="password" name="password" class="pop-input" placeholder="请输入密码" /></li>
-                    </ul>
-                    <div class="">
-                        <input value="登录" class="form-submit" type="submit">
+                        <div class="recommend-item">
+                            <div class="rec-thumb">
+                                <a href="article.html"><img src="img.png" alt="推荐文章二"></a>
+                            </div>
+                            <div class="rec-info">
+                                <a href="article.html" class="rec-title">推荐文章二的标题内容</a>
+                                <div class="rec-meta">2024-01-02 · 856 次阅读</div>
+                            </div>
+                        </div>
                     </div>
-                </form>
-            </section>
+                </div>
+
+                <!-- 留言墙 -->
+                <div class="sidebar-card">
+                    <div class="sidebar-title">留言墙</div>
+                    <div class="msg-list">
+                        <div class="msg-item">
+                            <div class="msg-avatar" style="background:#6c63ff;">张</div>
+                            <div class="msg-body">
+                                <div class="msg-name">张小明</div>
+                                <div class="msg-text">这篇文章写得很好！foreach 的例子太清晰了。</div>
+                            </div>
+                        </div>
+                        <div class="msg-item">
+                            <div class="msg-avatar" style="background:#38a169;">李</div>
+                            <div class="msg-body">
+                                <div class="msg-name">李四</div>
+                                <div class="msg-text">代码示例非常实用，已收藏！</div>
+                            </div>
+                        </div>
+                        <div class="msg-item">
+                            <div class="msg-avatar" style="background:#d69e2e;">王</div>
+                            <div class="msg-body">
+                                <div class="msg-name">王小花</div>
+                                <div class="msg-text">跟着博主学 PHP，进步好快呀～</div>
+                            </div>
+                        </div>
+                        <div class="msg-item">
+                            <div class="msg-avatar" style="background:#3182ce;">赵</div>
+                            <div class="msg-body">
+                                <div class="msg-name">赵大宝</div>
+                                <div class="msg-text">博主回复很及时，问题都解决了！</div>
+                            </div>
+                        </div>
+                        <div class="msg-item">
+                            <div class="msg-avatar" style="background:#805ad5;">孙</div>
+                            <div class="msg-body">
+                                <div class="msg-name">孙晨曦</div>
+                                <div class="msg-text">期待 Composer 系列文章，快更！</div>
+                            </div>
+                        </div>
+                        <div class="msg-item">
+                            <div class="msg-avatar" style="background:#319795;">吴</div>
+                            <div class="msg-body">
+                                <div class="msg-name">吴天明</div>
+                                <div class="msg-text">排版一流，阅读体验很舒服。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 友情链接 -->
+                <div class="sidebar-card">
+                    <div class="sidebar-title">友情链接</div>
+                    <div class="links-list">
+                        <a href="https://www.php.net" target="_blank">PHP 官网</a>
+                        <a href="https://laravel.com" target="_blank">Laravel</a>
+                    </div>
+                </div>
+
+            </aside>
         </div>
     </div>
 </div>
-<div class="pop-shade"></div>
-<div class="clear"></div>
+
+<!-- 页脚 -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="https://github.com/qq851145971/blog">本站由陈大剩博客程序搭建</a>
+                <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">粤ICP备XXXXXXXX号</a>
+                <span>Copyright © 2017 - 2026 Blog</span>
+                <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">CC BY-NC 4.0</a>
+            </div>
+            <div class="footer-stats">
+                <span>文章总数[<em>--</em>]</span>
+                <span>评论总数[<em>--</em>]</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- 回到顶部 -->
+<div class="back-top">
+    <i class="iconfont icon-dingbu"></i>
+</div>
+
+<script>
+    document.getElementById('navToggle').addEventListener('click', function() {
+        this.classList.toggle('open');
+        document.getElementById('mobileNav').classList.toggle('open');
+    });
+    document.querySelector('.back-top').addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+
 </body>
 </html>
