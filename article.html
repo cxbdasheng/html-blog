@@ -10,17 +10,7 @@
     <meta name="author" content="Cxb,chenDasheng"/>
     <meta name="csrf-token" content="">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/lib/editor/lib/katex/katex.min.css"
-          integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
-    <script defer src="/lib/editor/lib/katex/katex.min.js"
-            integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja"
-            crossorigin="anonymous"></script>
-                <script src="/lib/layui/jquery.min.js"></script>
-    <script src="/js/pace.min.js"></script>
-
-    <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/iconfont.css">
-    <link rel="stylesheet" href="css/prism.css">
 </head>
 <body>
 <!-- 顶部开始 -->
@@ -28,19 +18,10 @@
     <div class="top-header">
         <div class="top-weclome">
             <div class="today fl">
-                <script type="text/javascript">
-                    var Hours = new Date().getHours();
-                    var meg = '';
-                    if (Hours <= 6) { meg = "凌晨"; }
-                    else if (Hours <= 11) { meg = "早上"; }
-                    else if (Hours <= 14) { meg = "中午"; }
-                    else if (Hours <= 19) { meg = "下午"; }
-                    else { meg = "晚上"; }
-                    document.write('Hi' + meg + '好，现在是：' + new Date().getFullYear() + "年" + (new Date().getMonth() + 1) + "月" + new Date().getDate() + "日" + " " + "星期" + "日一二三四五六".charAt(new Date().getDay()));
-                </script>
+                Hi，欢迎访问陈大剩博客！
             </div>
             <div class="loginbar fr">
-                <a id="index-login" href="javascript:;">登录</a>
+                <a id="index-login" href="#">登录</a>
             </div>
         </div>
     </div>
@@ -174,13 +155,13 @@ foreach ($arr as $v) {
                         </div>
                         <div class="hfmain">
                             <div class="hfmain-top">
-                                <a href="javascript:;" class="name" title="访客A">访客A</a>
+                                <a href="#" class="name" title="访客A">访客A</a>
                                 <span class="hfmain-con"><p>这篇文章写得非常好，学到了很多！</p></span>
                             </div>
                             <div class="fhtime">
                                 <span class="fhtime-time">2024-01-02 09:30:00</span>
                                 <div class="fh-fh">
-                                    <a href="javascript:;" class="reply" id="1" name="访客A" title="回复">回复</a>
+                                    <a href="#" class="reply" id="1" name="访客A" title="回复">回复</a>
                                 </div>
                                 <div class="clear"></div>
                             </div>
@@ -256,7 +237,7 @@ foreach ($arr as $v) {
             <p class="fl">
                 <a href="https://github.com/qq851145971/blog">本站由陈大剩博客程序搭建 </a>|
                 <a target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index">粤ICP备XXXXXXXX号</a>|
-                <span class="copyright">Copyright © 2017 -<script>document.write(new Date().getFullYear());</script> Blog</span>|
+                <span class="copyright">Copyright © 2017 - 2026 Blog</span>|
                 <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">本站采用创作共用版权：CC BY-NC 4.0</a>
             </p>
             <p class="fr">
@@ -293,7 +274,7 @@ foreach ($arr as $v) {
     <div class="pop-right">
         <div class="pop-right-head">
             <h4>登入</h4>
-            <a href="javascript:;" id="login_close"><i class="iconfont icon-zhedie1"></i></a>
+            <a href="#" id="login_close"><i class="iconfont icon-zhedie1"></i></a>
             <div class="clear"></div>
         </div>
         <div class="pop-body">
@@ -313,130 +294,5 @@ foreach ($arr as $v) {
 </div>
 <div class="pop-shade"></div>
 <div class="clear"></div>
-<script src="/js/app.js"></script>
-<script type="text/javascript" src="/lib/layui/layui.all.js"></script>
-<script type="text/javascript" src="/js/prism.js"></script>
-<script src="/js/jquery.lazyload.js"></script>
-<script src="/js/jquery.qqFace.js"></script>
-<script>
-    $(function () {
-        var r = '/lib/editor/lib/katex/katex.min',
-            l = { js: [], css: [] },
-            d = {
-                initLaTeX: function () {
-                    var e = this, n = $('.editormd-tex');
-                    0 != n.length && (-1 == $.inArray(r, l.js) ? e.loadScript(r, (function () { e.renderKatex(n) })) : e.renderKatex(n));
-                },
-                renderKatex: function (e) {
-                    'undefined' != typeof katex && e.each((function () {
-                        var e = $(this);
-                        katex.render(e.text(), e[0]);
-                    }));
-                },
-                loadScript: function (t, e, n) {
-                    l.js.push(t);
-                    n = n || 'head';
-                    e = e || function () {};
-                    var i = null;
-                    (i = document.createElement('script')).id = t.replace(/[\./]+/g, '-');
-                    i.type = 'text/javascript';
-                    i.src = t + '.js';
-                    i.onload = function () { e(); };
-                    'head' === n ? document.getElementsByTagName('head')[0].appendChild(i) : document.body.appendChild(i);
-                }
-            };
-        d.initLaTeX();
-
-        $.qqface({
-            imgPath: '/img/gif/',
-            textarea: $('#lytext'),
-            handle: $('.emotion')
-        });
-
-        $('.new-cont a').attr('target', '_blank');
-
-        var _pre = $('.new-cont pre');
-        if (_pre.length > 0) {
-            _pre.addClass("line-numbers").css("white-space", "pre-wrap");
-        } else {
-            _pre.addClass("line-numbers");
-        }
-
-        var form = layui.form;
-
-        function praise() {
-            $.ajax({
-                type: "POST",
-                url: "/praise?number=" + Math.random(),
-                dataType: "json",
-                async: false,
-                data: { id: 1 },
-                success: function (res) {
-                    if (res == "ok") {
-                        var b = Number($('.zan-data').text());
-                        $('.zan-data').text(b + 1);
-                    } else {
-                        alert("你已经投过一次了，还想投么(￣口￣)！！！");
-                    }
-                }
-            });
-        }
-        window.praise = praise;
-
-        form.on('submit(submit)', function (data) {
-            var load = layer.msg('正在努力提交...', { icon: 16, shade: [0.1, '#fff'], time: false });
-            $.ajax({
-                url: "/contact?number=" + Math.random(),
-                type: "POST",
-                dataType: "json",
-                data: data.field,
-                success: function (data) {
-                    layer.close(load);
-                    if (data.success == 1) {
-                        layer.msg(data.message, { icon: 1, time: 1500 });
-                        window.location.reload();
-                    } else {
-                        layer.msg("请求失败！", { icon: 5, time: 1500 });
-                    }
-                },
-                error: function () {
-                    layer.msg("请求失败！", { icon: 5, time: 1500 });
-                }
-            });
-            return false;
-        });
-
-        $('.body').on('click', '.reply', function () {
-            var clas = $(this).attr('class');
-            var id = $(this).attr('id');
-            if (clas !== "check reply") {
-                var html = '<form id="ly" class="layui-form"><div class="comments-left">' +
-                    '<img src="/img/default.jpg" alt="头像" title="头像"/>' +
-                    '</div>' +
-                    '<div class="comments-right">' +
-                    '<div class="comments-right-head">' +
-                    '<input class="textinput" name="nickname" required type="text" value="" readonly="" placeholder="请先登入">' +
-                    '<input class="textinput" name="email" type="text" placeholder="接收回复的邮箱">' +
-                    '</div>' +
-                    '<div class="comments-right-body">' +
-                    '<p><textarea class="textarea" required name="content" cols="60" required="" rows="12" id="lytext_cli" placeholder="留下你想对我说的话！"></textarea></p>' +
-                    '<div class="comment-ctrl"><span class="emotion"><img src="/img/em.png" width="20" height="20" alt="">表情</span></div>' +
-                    '<button type="button" name="comment-submit" id="submit" class="comment-submit">评论</button>' +
-                    '</div></div></form>';
-                $('.comment_foot').find('#ly').remove();
-                $(this).attr('class', 'check reply');
-                $(this).parents('.fh-fh').parents('.fhtime').append(html);
-                $.qqface({
-                    imgPath: '/img/gif/',
-                    textarea: $(this).parents('.fh-fh').parents('.fhtime').find('#ly').find('#lytext_cli'),
-                    handle: $(this).parents('.fh-fh').parents('.fhtime').find('#ly').find('.emotion')
-                });
-            } else {
-                $(this).parents('.fh-fh').parents('.fhtime').find('#ly').remove();
-                $(this).removeClass('check');
-            }
-        });
-    });
-</script>
 </body>
 </html>
