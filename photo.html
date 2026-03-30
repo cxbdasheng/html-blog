@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>摄影 - 陈大剩博客</title>
+    <meta name="keywords" content="摄影,风景,陈大剩博客,街拍,人像"/>
+    <meta name="description" content="陈大剩的摄影作品集，记录生活中的美好瞬间。"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/photo.css">
+</head>
+<body>
+
+<!-- 顶部提示栏 -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-inner">
+            <span>Hi，欢迎访问陈大剩博客！</span>
+            <a href="#">登录</a>
+        </div>
+    </div>
+</div>
+
+<!-- 导航 -->
+<header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="index.html" class="site-logo">陈大剩博客</a>
+            <nav class="site-nav">
+                <a href="index.html">首页</a>
+                <a href="index.html">PHP</a>
+                <a href="index.html">前端</a>
+                <a href="photo.html" class="active">摄影</a>
+                <a href="about.html">关于</a>
+                <a href="time.html">时间轴</a>
+            </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">首页</a>
+        <a href="index.html">PHP</a>
+        <a href="index.html">前端</a>
+        <a href="photo.html" class="active">摄影</a>
+        <a href="about.html">关于</a>
+        <a href="time.html">时间轴</a>
+    </div>
+</header>
+
+<!-- 主内容 -->
+<div class="main-wrap">
+    <div class="container">
+        <div class="main-grid">
+
+            <!-- 相册主区域 -->
+            <div>
+                <div class="photo-section">
+                    <div class="section-header">
+                        <span class="section-title">摄影作品</span>
+                        <span class="photo-count">共 <em>24</em> 张</span>
+                    </div>
+
+                    <!-- 分类筛选 -->
+                    <div class="filter-bar">
+                        <button class="filter-btn active" data-cat="all">全部</button>
+                        <button class="filter-btn" data-cat="landscape">风景</button>
+                        <button class="filter-btn" data-cat="street">街拍</button>
+                        <button class="filter-btn" data-cat="portrait">人像</button>
+                        <button class="filter-btn" data-cat="life">生活</button>
+                    </div>
+
+                    <!-- 瀑布流网格 -->
+                    <div class="photo-grid" id="photoGrid">
+
+                        <div class="photo-item" data-cat="landscape">
+                            <div class="photo-inner">
+                                <img src="img.png" alt="晨雾中的山脉" loading="lazy">
+                                <div class="photo-overlay">
+                                    <div class="photo-info">
+                                        <div class="photo-title">晨雾中的山脉</div>
+                                        <div class="photo-meta">
+                                            <span class="photo-loc">📍 广东·韶关</span>
+                                            <span>2024-03-15</span>
+                                        </div>
+                                    </div>
+                                    <button class="photo-view-btn" aria-label="查看大图">⤢</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="photo-item photo-item--tall" data-cat="street">
+                            <div class="photo-inner">
+                                <img src="img.png" alt="老街的午后" loading="lazy">
+                                <div class="photo-overlay">
+                                    <div class="photo-info">
+                                        <div class="photo-title">老街的午后</div>
+                                        <div class="photo-meta">
+                                            <span class="photo-loc">📍 广州·荔湾</span>
+                                            <span>2024-02-20</span>
+                                        </div>
+                                    </div>
+                                    <button class="photo-view-btn" aria-label="查看大图">⤢</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="photo-item" data-cat="life">
+                            <div class="photo-inner">
+                                <img src="img.png" alt="咖啡与代码" loading="lazy">
+                                <div class="photo-overlay">
+                                    <div class="photo-info">
+                                        <div class="photo-title">咖啡与代码</div>
+                                        <div class="photo-meta">
+                                            <span class="photo-loc">📍 深圳·南山</span>
+                                            <span>2024-04-01</span>
+                                        </div>
+                                    </div>
+                                    <button class="photo-view-btn" aria-label="查看大图">⤢</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="photo-item" data-cat="landscape">
+                            <div class="photo-inner">
+                                <img src="img.png" alt="海边的黄昏" loading="lazy">
+                                <div class="photo-overlay">
+                                    <div class="photo-info">
+                                        <div class="photo-title">海边的黄昏</div>
+                                        <div class="photo-meta">
+                                            <span class="photo-loc">📍 广东·汕头</span>
+                                            <span>2024-01-28</span>
+                                        </div>
+                                    </div>
+                                    <button class="photo-view-btn" aria-label="查看大图">⤢</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="photo-item" data-cat="portrait">
+                            <div class="photo-inner">
+                                <img src="img.png" alt="窗边的光影" loading="lazy">
+                                <div class="photo-overlay">
+                                    <div class="photo-info">
+                                        <div class="photo-title">窗边的光影</div>
+                                        <div class="photo-meta">
+                                            <span class="photo-loc">📍 广州</span>
+                                            <span>2024-03-08</span>
+                                        </div>
+                                    </div>
+                                    <button class="photo-view-btn" aria-label="查看大图">⤢</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="photo-item photo-item--tall" data-cat="landscape">
+                            <div class="photo-inner">
+                                <img src="img.png" alt="瀑布深处" loading="lazy">
+                                <div class="photo-overlay">
+                                    <div class="photo-info">
+                                        <div class="photo-title">瀑布深处</div>
+                                        <div class="photo-meta">
+                                            <span class="photo-loc">📍 广东·连州</span>
+                                            <span>2024-05-10</span>
+                                        </div>
+                                    </div>
+                                    <button class="photo-view-btn" aria-label="查看大图">⤢</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="photo-item" data-cat="street">
+                            <div class="photo-inner">
+                                <img src="img.png" alt="地铁站台" loading="lazy">
+                                <div class="photo-overlay">
+                                    <div class="photo-info">
+                                        <div class="photo-title">地铁站台</div>
+                                        <div class="photo-meta">
+                                            <span class="photo-loc">📍 广州·天河</span>
+                                            <span>2024-02-14</span>
+                                        </div>
+                                    </div>
+                                    <button class="photo-view-btn" aria-label="查看大图">⤢</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="photo-item" data-cat="life">
+                            <div class="photo-inner">
+                                <img src="img.png" alt="夜市烟火" loading="lazy">
+                                <div class="photo-overlay">
+                                    <div class="photo-info">
+                                        <div class="photo-title">夜市烟火</div>
+                                        <div class="photo-meta">
+                                            <span class="photo-loc">📍 深圳·罗湖</span>
+                                            <span>2024-04-18</span>
+                                        </div>
+                                    </div>
+                                    <button class="photo-view-btn" aria-label="查看大图">⤢</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="photo-item" data-cat="street">
+                            <div class="photo-inner">
+                                <img src="img.png" alt="骑行的人们" loading="lazy">
+                                <div class="photo-overlay">
+                                    <div class="photo-info">
+                                        <div class="photo-title">骑行的人们</div>
+                                        <div class="photo-meta">
+                                            <span class="photo-loc">📍 广州·珠江边</span>
+                                            <span>2024-03-22</span>
+                                        </div>
+                                    </div>
+                                    <button class="photo-view-btn" aria-label="查看大图">⤢</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="photo-item" data-cat="portrait">
+                            <div class="photo-inner">
+                                <img src="img.png" alt="阳光少年" loading="lazy">
+                                <div class="photo-overlay">
+                                    <div class="photo-info">
+                                        <div class="photo-title">阳光少年</div>
+                                        <div class="photo-meta">
+                                            <span class="photo-loc">📍 广州</span>
+                                            <span>2024-01-05</span>
+                                        </div>
+                                    </div>
+                                    <button class="photo-view-btn" aria-label="查看大图">⤢</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="photo-item" data-cat="landscape">
+                            <div class="photo-inner">
+                                <img src="img.png" alt="云海翻涌" loading="lazy">
+                                <div class="photo-overlay">
+                                    <div class="photo-info">
+                                        <div class="photo-title">云海翻涌</div>
+                                        <div class="photo-meta">
+                                            <span class="photo-loc">📍 广东·南岭</span>
+                                            <span>2024-06-01</span>
+                                        </div>
+                                    </div>
+                                    <button class="photo-view-btn" aria-label="查看大图">⤢</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="photo-item photo-item--tall" data-cat="life">
+                            <div class="photo-inner">
+                                <img src="img.png" alt="书架一角" loading="lazy">
+                                <div class="photo-overlay">
+                                    <div class="photo-info">
+                                        <div class="photo-title">书架一角</div>
+                                        <div class="photo-meta">
+                                            <span class="photo-loc">📍 家中</span>
+                                            <span>2024-05-20</span>
+                                        </div>
+                                    </div>
+                                    <button class="photo-view-btn" aria-label="查看大图">⤢</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- 加载更多 -->
+                    <div class="load-more-wrap">
+                        <button class="load-more-btn">加载更多</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧边栏 -->
+            <aside class="sidebar">
+
+                <!-- 摄影师简介 -->
+                <div class="sidebar-card">
+                    <div class="sidebar-title">关于摄影</div>
+                    <div class="photographer-card">
+                        <div class="photographer-avatar">
+                            <img src="img.png" alt="陈大剩">
+                        </div>
+                        <div class="photographer-name">陈大剩</div>
+                        <div class="photographer-bio">用镜头记录生活，在代码之外寻找另一种表达方式。</div>
+                        <div class="photographer-stats">
+                            <div class="pstat">
+                                <div class="pstat-num">24</div>
+                                <div class="pstat-label">作品</div>
+                            </div>
+                            <div class="pstat">
+                                <div class="pstat-num">8</div>
+                                <div class="pstat-label">城市</div>
+                            </div>
+                            <div class="pstat">
+                                <div class="pstat-num">3</div>
+                                <div class="pstat-label">年</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 器材 -->
+                <div class="sidebar-card">
+                    <div class="sidebar-title">常用器材</div>
+                    <div class="gear-list">
+                        <div class="gear-item">
+                            <span class="gear-icon">📷</span>
+                            <div class="gear-info">
+                                <div class="gear-name">Sony A7C II</div>
+                                <div class="gear-desc">主力机身</div>
+                            </div>
+                        </div>
+                        <div class="gear-item">
+                            <span class="gear-icon">🔭</span>
+                            <div class="gear-info">
+                                <div class="gear-name">FE 35mm F1.8</div>
+                                <div class="gear-desc">日常扫街</div>
+                            </div>
+                        </div>
+                        <div class="gear-item">
+                            <span class="gear-icon">🔭</span>
+                            <div class="gear-info">
+                                <div class="gear-name">FE 85mm F1.8</div>
+                                <div class="gear-desc">人像&风景</div>
+                            </div>
+                        </div>
+                        <div class="gear-item">
+                            <span class="gear-icon">📱</span>
+                            <div class="gear-info">
+                                <div class="gear-name">iPhone 15 Pro</div>
+                                <div class="gear-desc">随手记录</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 分类统计 -->
+                <div class="sidebar-card">
+                    <div class="sidebar-title">分类统计</div>
+                    <div class="cat-stats">
+                        <div class="cat-stat-item">
+                            <span class="cat-stat-name">🏔️ 风景</span>
+                            <div class="cat-stat-bar-wrap">
+                                <div class="cat-stat-bar" style="width: 50%"></div>
+                            </div>
+                            <span class="cat-stat-num">12</span>
+                        </div>
+                        <div class="cat-stat-item">
+                            <span class="cat-stat-name">🏙️ 街拍</span>
+                            <div class="cat-stat-bar-wrap">
+                                <div class="cat-stat-bar" style="width: 29%"></div>
+                            </div>
+                            <span class="cat-stat-num">7</span>
+                        </div>
+                        <div class="cat-stat-item">
+                            <span class="cat-stat-name">☕ 生活</span>
+                            <div class="cat-stat-bar-wrap">
+                                <div class="cat-stat-bar" style="width: 17%"></div>
+                            </div>
+                            <span class="cat-stat-num">4</span>
+                        </div>
+                        <div class="cat-stat-item">
+                            <span class="cat-stat-name">🙋 人像</span>
+                            <div class="cat-stat-bar-wrap">
+                                <div class="cat-stat-bar" style="width: 4%"></div>
+                            </div>
+                            <span class="cat-stat-num">1</span>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+    </div>
+</div>
+
+<!-- 灯箱 -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="查看大图">
+    <button class="lightbox-close" id="lightboxClose" aria-label="关闭">✕</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="上一张">‹</button>
+    <button class="lightbox-next" id="lightboxNext" aria-label="下一张">›</button>
+    <div class="lightbox-content">
+        <img src="" alt="" id="lightboxImg">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+</div>
+
+<!-- 页脚 -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="https://github.com/qq851145971/blog">本站由陈大剩博客程序搭建</a>
+                <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">粤ICP备XXXXXXXX号</a>
+                <span>Copyright © 2017 - 2026 Blog</span>
+                <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">CC BY-NC 4.0</a>
+            </div>
+            <div class="footer-stats">
+                <span>文章总数[<em>--</em>]</span>
+                <span>评论总数[<em>--</em>]</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- 回到顶部 -->
+<div class="back-top" id="backTop">↑</div>
+
+<script>
+    // 导航 toggle
+    document.getElementById('navToggle').addEventListener('click', function () {
+        this.classList.toggle('open');
+        document.getElementById('mobileNav').classList.toggle('open');
+    });
+
+    // 回到顶部
+    document.getElementById('backTop').addEventListener('click', function () {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+
+    // 分类筛选
+    var filterBtns = document.querySelectorAll('.filter-btn');
+    var photoItems = document.querySelectorAll('.photo-item');
+    filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            filterBtns.forEach(function (b) {
+                b.classList.remove('active');
+            });
+            this.classList.add('active');
+            var cat = this.dataset.cat;
+            photoItems.forEach(function (item) {
+                if (cat === 'all' || item.dataset.cat === cat) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // 灯箱
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightboxImg');
+    var lightboxCaption = document.getElementById('lightboxCaption');
+    var currentIndex = 0;
+    var visibleItems = [];
+
+    function openLightbox(index) {
+        visibleItems = Array.from(document.querySelectorAll('.photo-item:not([style*="none"])'));
+        currentIndex = index;
+        showLightboxImage(currentIndex);
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function showLightboxImage(idx) {
+        var item = visibleItems[idx];
+        var img = item.querySelector('img');
+        var title = item.querySelector('.photo-title').textContent;
+        var meta = item.querySelector('.photo-meta').textContent.trim();
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxCaption.innerHTML = '<strong>' + title + '</strong> <span>' + meta + '</span>';
+    }
+
+    document.querySelectorAll('.photo-view-btn').forEach(function (btn, i) {
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            openLightbox(i);
+        });
+    });
+
+    document.querySelectorAll('.photo-inner').forEach(function (inner, i) {
+        inner.addEventListener('click', function () {
+            openLightbox(i);
+        });
+    });
+
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+
+    document.getElementById('lightboxPrev').addEventListener('click', function (e) {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+        showLightboxImage(currentIndex);
+    });
+
+    document.getElementById('lightboxNext').addEventListener('click', function (e) {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % visibleItems.length;
+        showLightboxImage(currentIndex);
+    });
+
+    lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') document.getElementById('lightboxPrev').click();
+        if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
+    });
+</script>
+
+</body>
+</html>
